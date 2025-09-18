@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend Hive - Payment</title>
+    <!-- Link to the dedicated CSS for the payment page -->
+    <link rel="stylesheet" href="payment.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="toast" aria-live="polite"></div>
+
+    <header>
+        <div class="brand">
+            <h1><a href="index.html">Trend Hive</a></h1>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+        </nav>
+        <div class="header-actions">
+            <a href="../Login/C-Login.html" class="nav-link">Login</a>
+            <a class="cart-link nav-link" href="cart.html">Cart <span id="cartBadge" class="cart-badge"
+                    style="display:none">0</span></a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- This container is the main target for your payment.js script -->
+        <div class="payment-section" id="paymentSection">
+            <h2>Complete Your Payment</h2>
+            <p class="payment-total">Your total amount is: <strong id="totalAmount">Loading...</strong></p>
+
+            <div class="payment-method-selection">
+                <h3>Select Payment Method:</h3>
+                <div class="radio-option">
+                    <input type="radio" id="cashOnDelivery" name="payMethod" value="Cash On Delivery" checked>
+                    <label for="cashOnDelivery">Cash On Delivery</label>
+                </div>
+                <div class="radio-option disabled">
+                    <input type="radio" id="card" name="payMethod" value="Card Payment" disabled>
+                    <label for="card">Card Payment (Coming Soon)</label>
+                </div>
+            </div>
+
+            <button id="confirmBtn" class="confirm-btn">Confirm Order</button>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Trend Hive | Designed by You
+    </footer>
+
+    <!-- Your payment.js script, which will control this page -->
+    <script src="payment.js" defer></script>
+</body>
+</html>
+

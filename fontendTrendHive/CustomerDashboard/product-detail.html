@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Trend Hive</title>
+    <!-- Link to the dedicated CSS file for this page -->
+    <link rel="stylesheet" href="product-detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons (like cart and buy now buttons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="toast" aria-live="polite"></div>
+
+    <header>
+        <div class="brand">
+            <h1><a href="index.html">Trend Hive</a></h1>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#">Shop</a>
+        </nav>
+        <div class="header-actions">
+            <a href="../Login/C-Login.html" class="nav-link">Login</a>
+            <a class="cart-link nav-link" href="cart.html">Cart <span id="cartBadge" class="cart-badge"
+                    style="display:none">0</span></a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- The JavaScript will inject the entire product layout into this container -->
+        <div id="productDetailContainer">
+            <p>Loading product details...</p>
+        </div>
+    </main>
+    
+    <footer>
+        &copy; 2025 Trend Hive — All rights reserved
+    </footer>
+
+    <!-- The dedicated JavaScript for this page -->
+    <script src="product-detail.js" defer></script>
+</body>
+</html>
+

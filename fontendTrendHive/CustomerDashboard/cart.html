@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Cart - Trend Hive</title>
+    <!-- Link to the new cart.css file -->
+    <link rel="stylesheet" href="cart.css">
+    <!-- Google Fonts for a professional look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="toast" aria-live="polite"></div>
+
+    <header>
+        <div class="brand">
+            <h1><a href="index.html">Trend Hive</a></h1>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#">Shop</a>
+        </nav>
+        <div class="header-actions">
+            <a href="../Login/C-Login.html" class="nav-link">Login</a>
+            <a class="cart-link nav-link" href="cart.html">Cart <span id="cartBadge" class="cart-badge"
+                    style="display:none">0</span></a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="cart-header">
+            <h2>Your Shopping Cart</h2>
+            <p>You have <span id="item-count">0</span> items in your cart.</p>
+        </div>
+
+        <div class="cart-layout">
+            <!-- Cart items will be dynamically inserted here -->
+            <div id="cart-items-container" class="cart-items">
+                <!-- Loading State/Empty State will be shown here -->
+            </div>
+
+            <!-- Cart Summary Section -->
+            <div class="cart-summary-card">
+                <h3>Order Summary</h3>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal-amount">₹0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>FREE</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total</span>
+                    <span id="total-amount">₹0.00</span>
+                </div>
+                <button class="checkout-btn">Proceed to Payment</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Trend Hive — All rights reserved
+    </footer>
+
+    <script src="cart.js" defer></script>
+</body>
+
+</html>

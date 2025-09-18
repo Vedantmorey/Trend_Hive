@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - E-Commerce</title>
+    <link rel="stylesheet" href="Register.css">
+    <script src="Register.js" defer></script>
+
+</head>
+
+<body>
+
+    <img src="https://img.icons8.com/ios-filled/100/000000/shopping-cart.png" class="floating">
+    <img src="https://img.icons8.com/ios-filled/100/000000/shopping-bag.png" class="floating">
+    <img src="https://img.icons8.com/ios-filled/100/000000/discount.png" class="floating">
+    <img src="https://img.icons8.com/ios-filled/100/000000/gift.png" class="floating">
+
+    <div class="container">
+        <h2>Trend Hive</h2>
+        <form id="registerForm">
+            <input type="text" id="fullname" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="E-mail" required>
+            <input type="tel" id="phone" placeholder="Phone No." required>
+            <input type="password" id="password" placeholder="Password" required>
+
+            <div class="role">
+                <label><input type="radio" name="role" value="RETAILER" required> Retailer</label>
+                <label><input type="radio" name="role" value="CUSTOMER" required> Customer</label>
+            </div>
+
+            <button type="submit" class="btn">Register</button>
+        </form>
+
+        <div class="links">
+            <span>Already have an account?</span>
+            <a href="../Login/C-Login.html">Customer Login</a>
+            <span>|</span>
+            <a href="../Login/R-Login.html">Retailer Login</a>
+        </div>
+        </div>
+</body>
+
+</html>

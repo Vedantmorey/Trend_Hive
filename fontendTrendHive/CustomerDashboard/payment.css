@@ -1,0 +1,217 @@
+/* --- General Styles and Variables (Pink/Orange Theme) --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #ff6600;
+    --brand-color: #ff6600;
+    --background-color: #ffd1dc;
+    --container-bg: #ffffff;
+    --text-color: #333333;
+    --light-text-color: #666666;
+    --border-color: #eeeeee;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+}
+
+/* --- Base & Font Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--container-bg);
+    padding: 10px 5%;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand h1 a {
+    color: var(--brand-color);
+    text-decoration: none;
+    font-size: 1.8em;
+}
+
+.nav-links, .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a, .header-actions .nav-link {
+    color: var(--light-text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .header-actions .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.cart-link { position: relative; display: inline-flex; }
+.cart-badge {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 0.7em;
+    position: absolute;
+    top: -8px; right: -12px;
+}
+
+/* --- Main Container --- */
+.container {
+    width: 90%;
+    max-width: 600px; /* Optimal width for a payment form */
+    margin: 40px auto;
+    flex-grow: 1;
+}
+
+/* --- Payment & Success Section Styling --- */
+.payment-section {
+    background-color: var(--container-bg);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px var(--shadow-color);
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.payment-total {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: var(--light-text-color);
+}
+
+.payment-total strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* --- Payment Method Selection --- */
+.payment-method-selection {
+    text-align: left;
+    margin-bottom: 30px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.payment-method-selection h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.radio-option {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.radio-option:hover {
+    border-color: var(--primary-color);
+}
+
+.radio-option input[type="radio"] {
+    margin-right: 15px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+.radio-option.disabled {
+    background-color: #f9f9f9;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.radio-option.disabled:hover {
+    border-color: var(--border-color);
+}
+
+
+/* --- Buttons --- */
+.confirm-btn, .home-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-decoration: none; /* For the 'a' tag */
+    display: inline-block; /* For the 'a' tag */
+}
+
+.confirm-btn:hover, .home-btn:hover {
+    background-color: #e65c00;
+    transform: translateY(-2px);
+}
+
+.confirm-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    color: var(--light-text-color);
+    background-color: #f8f9fa;
+    border-top: 1px solid var(--border-color);
+}
+
+/* --- Toast Notification --- */
+#toast {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 25px;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.3s, top 0.3s;
+}
+#toast.show { opacity: 1; top: 40px; }
+#toast.success { background-color: var(--success-color); }
+#toast.error { background-color: var(--danger-color); }
+

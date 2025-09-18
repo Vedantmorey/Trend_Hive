@@ -1,0 +1,334 @@
+/* --- General Styles and Variables (Pink/Orange Theme) --- */
+:root {
+    --primary-color: #ff6600;
+    --brand-color: #ff6600;
+    --background-color: #ffd1dc;
+    --container-bg: #ffffff;
+    --text-color: #333333;
+    --light-text-color: #666666;
+    --border-color: #eeeeee;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+}
+
+/* --- Base & Font Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--container-bg);
+    padding: 10px 5%;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand h1 a {
+    margin: 0;
+    color: var(--brand-color);
+    font-size: 1.8em;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links a, .header-actions .nav-link {
+    color: var(--light-text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    margin-left: 20px;
+}
+
+.nav-links a:hover, .header-actions .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.cart-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.cart-badge {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 0.7em;
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* --- Main Container & Back Button --- */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    flex-grow: 1;
+}
+
+/* --- Product Detail Card (Improved Layout) --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.product-detail-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 50px;
+    background-color: var(--container-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px var(--shadow-color);
+    animation: fadeIn 0.6s ease-out;
+    align-items: center;
+}
+
+.product-image-gallery img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.product-info h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 20px; /* Adjusted margin */
+    line-height: 1.3;
+}
+
+.product-info .price {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.product-info .description {
+    font-size: 1em;
+    margin-bottom: 30px;
+    color: var(--light-text-color);
+}
+
+/* --- Information Labels & Structure (MODIFIED) --- */
+/* Flex properties are removed to allow vertical stacking */
+
+.product-info h1::before {
+    content: 'PRODUCT';
+    display: block; /* Stacks the label above the name */
+    font-size: 0.8em;
+    font-weight: 600;
+    color: var(--light-text-color);
+    margin-bottom: 5px; /* Space between label and name */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-info .price::before {
+    content: 'PRICE';
+    display: block; /* Stacks the label above the price */
+    font-size: 0.8em;
+    font-weight: 600;
+    color: var(--light-text-color);
+    margin-bottom: 5px; /* Space between label and price */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-info .description::before {
+    content: 'Details';
+    display: block;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.availability {
+    font-weight: 500;
+    margin-bottom: 30px;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.in-stock {
+    color: #28a745;
+    background-color: #e9f7ef;
+}
+
+.out-of-stock {
+    color: #dc3545;
+    background-color: #fceaea;
+}
+
+.purchase-actions {
+    display: none; /* This hides the entire Add to Cart and quantity section */
+    gap: 15px;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 25px;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.qty-btn {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: var(--light-text-color);
+    transition: background-color 0.2s;
+}
+
+.qty-btn:hover {
+    background-color: #f7f7f7;
+}
+
+#quantity-input {
+    width: 45px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    padding: 10px 0;
+    -moz-appearance: textfield; /* Firefox */
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.add-to-cart-btn {
+    flex-grow: 1;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #e65c00;
+    transform: translateY(-2px);
+}
+
+.add-to-cart-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    color: var(--light-text-color);
+    background-color: #f8f9fa;
+    border-top: 1px solid var(--border-color);
+}
+
+
+/* --- Toast Notification --- */
+#toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 25px;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    z-index: 1001;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s, top 0.3s;
+}
+
+#toast.show {
+    visibility: visible;
+    opacity: 1;
+    top: 40px;
+}
+
+#toast.success { background-color: var(--success-color); }
+#toast.error { background-color: var(--danger-color); }
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .product-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px;
+    }
+    .product-image-gallery {
+        text-align: center;
+    }
+    .product-image-gallery img {
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 5%;
+    }
+    .product-info h1 {
+        font-size: 2em;
+    }
+    .product-info .price {
+        font-size: 1.8em;
+    }
+    .purchase-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+

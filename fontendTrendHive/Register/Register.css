@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a6c0fe, #f68084);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating shopping elements */
+.floating {
+  position: absolute;
+  width: 70px;
+  opacity: 0.25;
+  animation: float 10s infinite ease-in-out;
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.3));
+}
+
+.floating:nth-child(1) {
+  top: 8%;
+  left: 12%;
+  animation-delay: 0s;
+}
+
+.floating:nth-child(2) {
+  top: 18%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.floating:nth-child(3) {
+  bottom: 12%;
+  left: 18%;
+  animation-delay: 4s;
+}
+
+.floating:nth-child(4) {
+  bottom: 20%;
+  right: 25%;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-25px) rotate(15deg);
+  }
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25);
+  width: 370px;
+  z-index: 2;
+  text-align: center;
+  backdrop-filter: blur(12px);
+}
+
+.container h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.container input[type="text"],
+.container input[type="email"],
+.container input[type="tel"],
+.container input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.container input:focus {
+  border-color: #ff6600;
+  outline: none;
+  box-shadow: 0px 0px 12px rgba(255, 102, 0, 0.6);
+  transform: scale(1.03);
+}
+
+.role {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 500;
+}
+
+.role label {
+  cursor: pointer;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #ff6600, #ff9966);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #e65c00, #ff6600);
+  box-shadow: 0px 6px 18px rgba(255, 102, 0, 0.6);
+  transform: scale(1.05);
+}

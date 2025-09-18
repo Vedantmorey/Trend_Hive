@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retailer Dashboard</title>
+    <link rel="stylesheet" href="seller.css">
+</head>
+<body>
+
+    <div class="dashboard">
+        <aside class="sidebar">
+            <h2>Retailer Panel</h2>
+            <ul>
+                <li><a href="#" data-section="addProduct">➕ Add/Edit Product</a></li>
+                <li><a href="#" data-section="orders">📦 Orders</a></li>
+                <li><a href="#" data-section="payments">💳 Payments</a></li>
+                <li><a href="#" data-section="analytics">📊 Analytics</a></li>
+                <li><button id="logoutBtn">🚪 Logout</button></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+
+            <section id="addProduct" class="dashboard-section active">
+                <h2>Add/Edit Product</h2>
+                <form id="addProductForm">
+                    <input type="hidden" id="productId">
+                    <input type="text" id="productName" placeholder="Product Name" required>
+                    <textarea id="productDesc" placeholder="Description" required></textarea>
+                    <input type="number" id="productPrice" placeholder="Price" step="0.01" required>
+                    <label for="productCategory">Category:</label>
+                    <select id="productCategory" name="productCategory" required>
+                        <option value="" disabled selected>Select a Category</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Phones">Phones</option>
+                        <option value="Laptops">Laptops</option>
+                        <option value="Apparel">Apparel</option>
+                        <option value="Men's Fashion">Men's Fashion</option>
+                        <option value="Women's Fashion">Women's Fashion</option>
+                        <option value="Home & Kitchen">Home & Kitchen</option>
+                        <option value="Beauty">Beauty</option>
+                        <option value="Books">Books</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Toys">Toys</option>
+                    </select>
+                    
+                    <label for="productQuantity">Quantity:</label>
+                    <input type="number" id="productQuantity" name="productQuantity" placeholder="Quantity" required>
+                    
+                    <label for="productImage">Product Image:</label>
+                    <input type="file" id="productImage" name="productImage" accept="image/*">
+                    
+                    <button type="submit" id="submitBtn">Add Product</button>
+                </form>
+                
+                <h3 style="margin-top: 40px;">Your Products</h3>
+                <div id="productList">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTableBody">
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="orders" class="dashboard-section">
+                <h2>Order Requests</h2>
+                <div id="orderList">
+                </div>
+            </section>
+
+            <section id="payments" class="dashboard-section">
+                <h2>Payments</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paymentTable">
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="analytics" class="dashboard-section">
+                <h2>Analytics</h2>
+                <div class="stats">
+                    <div class="stat-card">Total Products: <span id="totalProducts">0</span></div>
+                    <div class="stat-card">Pending Orders: <span id="pendingOrders">0</span></div>
+                    <div class="stat-card">Completed Payments: <span id="completedPayments">0</span></div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="seller.js" defer></script>
+</body>
+</html>
